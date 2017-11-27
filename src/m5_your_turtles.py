@@ -31,13 +31,23 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 import rosegraphics as rg
 window = rg.TurtleWindow()
 ZACK= rg.SimpleTurtle('turtle')
-ZACK.pen = rg.Pen('midnight blue', 3)
+ZACK.pen = rg.Pen('gray', 3)
 ZACK.speed = 10
 CHIGO = rg.SimpleTurtle('turtle')
-CHIGO.pen = rg.Pen('yellow', 3)
+CHIGO.pen = rg.Pen('white', 3)
+CHIGO.left(90)
+CHIGO.forward(100)
+CHIGO.right(180)
 CHIGO.speed = 10
-sizez=300
+nubleth=10
 sizec=200
-for k in range(20):
-    ZACK.draw_square(sizez)
-    sizez=sizez-14
+for k in range(5):
+    ZACK.draw_regular_polygon(nubleth,100)
+    nubleth=nubleth-1
+    CHIGO.pen = rg.Pen('red', 3)
+for g in range(5):
+    CHIGO.pen = rg.Pen('white', 3)
+    CHIGO.forward(70)
+    CHIGO.pen = rg.Pen('red', 3)
+    CHIGO.draw_circle(sizec)
+    sizec=sizec-20
